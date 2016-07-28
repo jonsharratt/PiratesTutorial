@@ -3,7 +3,9 @@
 
 *Copyright Improbable 2016*
 
-*Accompanying Tutorial*: [improbable.io/docs/latest/tutorials/pirates/lesson1](https://improbable.io/docs/latest/tutorials/pirates/lesson1)
+- *Accompanying Tutorial*: [improbable.io/docs/latest/tutorials/pirates/lesson1](https://improbable.io/docs/latest/tutorials/pirates/lesson1)
+
+- *GitHub Repository*: [github.com/improbable-public/PiratesTutorial](https://github.com/improbable-public/PiratesTutorial)
 
 ---
 

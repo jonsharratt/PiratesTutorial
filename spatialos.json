@@ -1,0 +1,11 @@
+{
+	"name": "pirates",
+	"project_version": "0.0.1",
+	"sdk_version": "7.0.1",
+	"dependencies": [
+		{
+			"name": "CoreLibrary",
+			"version": "7.0.1"
+		}
+	]
+}

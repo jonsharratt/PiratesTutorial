@@ -45,12 +45,13 @@ GameObject:
   m_Component:
   - 4: {fileID: 486684}
   - 114: {fileID: 11454756}
+  - 114: {fileID: 11495542}
   m_Layer: 0
   m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &478140
 Transform:
@@ -187,6 +188,17 @@ MonoBehaviour:
   refractLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &11495542
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 161104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd33d4d65b1514d3b960bcfc7fdb73f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!154 &15469210
 TerrainCollider:
   m_ObjectHideFlags: 1

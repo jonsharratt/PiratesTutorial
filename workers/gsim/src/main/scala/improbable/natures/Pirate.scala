@@ -1,34 +1,28 @@
 package improbable.natures
 
-import improbable.behaviours.{ClientSideAuthorityBehaviour, DelegatePlayerControlsToClient}
 import improbable.corelib.natures.{BaseNature, NatureApplication, NatureDescription}
-import improbable.corelib.util.EntityOwnerDescriptor
 import improbable.corelibrary.transforms.TransformNature
-import improbable.papi.engine.EngineId
+import improbable.math.Vector3d
 import improbable.papi.entity.EntityPrefab
 import improbable.papi.entity.behaviour.EntityBehaviourDescriptor
 import improbable.ship.PlayerControls
 
-object Player extends NatureDescription {
+object Pirate extends NatureDescription {
 
   override val dependencies = Set[NatureDescription](BaseNature, TransformNature)
 
   override def activeBehaviours: Set[EntityBehaviourDescriptor] = {
-    Set(
-      descriptorOf[ClientSideAuthorityBehaviour],
-      descriptorOf[DelegatePlayerControlsToClient]
-    )
+    Set()
   }
 
-  def apply(clientId: EngineId): NatureApplication = {
+  def apply(position: Vector3d): NatureApplication = {
     application(
       states = Seq(
-        EntityOwnerDescriptor(Some(clientId)),
         PlayerControls(targetSpeed = 0, targetSteering = 0)
       ),
       natures = Seq(
-        BaseNature(EntityPrefab("PlayerShip")),
-        TransformNature()
+        BaseNature(EntityPrefab("PirateShip")),
+        TransformNature(globalPosition = position)
       )
     )
   }

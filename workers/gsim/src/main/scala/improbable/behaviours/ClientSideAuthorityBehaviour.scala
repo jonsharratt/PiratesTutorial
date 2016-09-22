@@ -1,4 +1,4 @@
-package improbable.physical
+package improbable.behaviours
 
 import improbable.corelibrary.transforms.TransformInterface
 import improbable.papi.entity.EntityBehaviour

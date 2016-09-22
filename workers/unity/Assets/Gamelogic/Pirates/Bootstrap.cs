@@ -1,72 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using Improbable.Core;
-using Improbable.Core.Network;
-using Improbable.Fapi.Receptionist;
-using Improbable.Unity;
+﻿using Improbable.Unity;
+using Improbable.Unity.Configuration;
 using Improbable.Unity.Core;
 using UnityEngine;
 
-public class Bootstrap : MonoBehaviour, IBootstrapHandler
+public class Bootstrap : MonoBehaviour
 {
-    public string ReceptionistIp = "localhost";
-    public int ReceptionistPort = 7777;
-    public EnginePlatform EngineType = EnginePlatform.Client;
-    public int FixedUpdateRate = 20;
-    public int TargetFps = 60;
-    public bool UsePrefabPooling = true;
-    public bool Instrument = true;
-    public bool IsDebugMode = true;
-    public LinkProtocol LinkProtocol = LinkProtocol.RakNet;
-    public int MsgProcessLimitPerFrame = 0;
-    public int EntityCreationLimitPerFrame = 0;
+    public WorkerConfigurationData Configuration = new WorkerConfigurationData();
 
     public void Start()
     {
-        var engineConfiguration = EngineConfiguration.Instance;
-        engineConfiguration.AssemblyName = "";
-        engineConfiguration.Ip = ReceptionistIp;
-        engineConfiguration.Port = ReceptionistPort;
-        engineConfiguration.TargetFps = TargetFps;
-        engineConfiguration.FixedUpdateRate = FixedUpdateRate;
-        engineConfiguration.UsePrefabPooling = UsePrefabPooling;
-        engineConfiguration.EngineType = EngineTypeUtils.ToEngineName(EngineType);
-        engineConfiguration.UseInstrumentation = Instrument;
-        engineConfiguration.IsDebugMode = IsDebugMode;
-        engineConfiguration.LinkProtocol = LinkProtocol;
-        engineConfiguration.AppName = "pirates";
-        engineConfiguration.MsgProcessLimitPerFrame = MsgProcessLimitPerFrame;
-        engineConfiguration.EntityCreationLimitPerFrame = EntityCreationLimitPerFrame;
-        EngineLifecycleManager.StartGame(this, gameObject);
-    }
+        UnityWorker.ApplyConfiguration(Configuration);
 
-    public void OnQueuingStarted()
-    {
-        Debug.Log("Queueing started");
-    }
+        switch (UnityWorker.Configuration.EnginePlatform)
+        {
+            case EnginePlatform.FSim:
+                UnityWorker.OnDisconnected += reason => Application.Quit();
 
-    public void OnQueuingUpdate(IQueueStatus status)
-    {
-        Debug.Log("Queue status: " + status);
-    }
+                var targetFramerate = 120;
+                var fixedFramerate = 20;
 
-    public void OnQueuingCompleted(IQueueStatus status)
-    {
-        Debug.Log("Queueing complete");
-    }
+                Application.targetFrameRate = targetFramerate;
+                Time.fixedDeltaTime = 1.0f / fixedFramerate;
+                break;
+        }
 
-    public void OnBootstrapError(Exception exception)
-    {
-        Debug.LogException(exception, this);
-    }
-
-    public void OnDeploymentListRetrieved(IList<IDeployment> deployments, Action<IDeployment> handleChosenDeployment)
-    {
-        handleChosenDeployment(deployments[0]);
-    }
-
-    public void BeginPreconnectionTasks(IDeployment deployment, IContainer container, Action onCompletedPreconnectionTasks)
-    {
-        onCompletedPreconnectionTasks();
-    }
+        UnityWorker.Connect(gameObject);
+    }    
 }

@@ -6,7 +6,7 @@ namespace Assets.Gamelogic.Pirates.Behaviours
 {
     public class CameraEnablerVisualizer : MonoBehaviour
     {
-        [Require] protected ShipControlsWriter ShipControlsAuthorityCheck;
+        [Require] protected PlayerControlsWriter PlayerControlsAuthorityCheck;
 
         public UnityEngine.Camera OurCamera;
 

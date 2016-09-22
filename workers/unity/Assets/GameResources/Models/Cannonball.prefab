@@ -12,11 +12,10 @@ GameObject:
   - 23: {fileID: 2317166}
   - 135: {fileID: 13593692}
   - 54: {fileID: 5455370}
-  - 114: {fileID: 11407866}
   - 114: {fileID: 11431974}
   m_Layer: 0
   m_Name: Cannonball
-  m_TagString: Untagged
+  m_TagString: Cannonball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,17 +80,6 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11407866
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 140448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f347cbead8834d4b9b3624421f0d45f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11431974
 MonoBehaviour:
   m_ObjectHideFlags: 1

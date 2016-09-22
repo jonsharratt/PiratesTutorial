@@ -29,7 +29,7 @@ GameObject:
   - 114: {fileID: 11436858}
   - 114: {fileID: 11492204}
   - 54: {fileID: 5458276}
-  - 114: {fileID: 11432558}
+  - 114: {fileID: 11403966}
   - 114: {fileID: 11490060}
   - 114: {fileID: 11441326}
   - 114: {fileID: 11484910}
@@ -37,10 +37,8 @@ GameObject:
   - 114: {fileID: 11426928}
   - 114: {fileID: 11410120}
   - 114: {fileID: 11472412}
-  - 114: {fileID: 11466898}
-  - 114: {fileID: 11437332}
   m_Layer: 0
-  m_Name: PlayerShip
+  m_Name: PirateShip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +314,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 1065668543b946f4790a1e433c948ca4, type: 2}
+  - {fileID: 2100000, guid: 4504564fc227bb4459eb19bd417e3e95, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -429,6 +427,17 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &11403966
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f221b8acd2567c4dbd5c333b4fda9b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11410120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -496,18 +505,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SinkingAnimation: {fileID: 11183426}
---- !u!114 &11432558
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4f7e8754fe525144a87d5d569753670, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OurCamera: {fileID: 2086014}
 --- !u!114 &11436858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -517,17 +514,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d9e8cb129b8451f44aa7182ee5ffb3e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11437332
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f221b8acd2567c4dbd5c333b4fda9b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11441326
@@ -542,17 +528,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CannonballPrefab: {fileID: 140448, guid: cdf9ea8c800eb8641bcc56c29c1ce908, type: 2}
---- !u!114 &11466898
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88985382aaed9d249beab4630a542940, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11472412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -594,14 +569,14 @@ MonoBehaviour:
   FSimEnableGlobalFallback: 1
   UseCenterOfMassPivot: 0
   PivotOffset: {x: 0, y: 0, z: 0}
-  NetworkUpdatePeriodThreshold: 0.2
-  PositionNetworkUpdateSquareDistanceThreshold: 0.25
-  RotationNetworkUpdateAngleThreshold: 2
-  VelocityNetworkUpdateSquareChangeThreshold: 0.5
-  AngularVelocityNetworkUpdateSquareChangeThreshold: 1
+  NetworkUpdatePeriodThreshold: 0.05
+  PositionNetworkUpdateSquareDistanceThreshold: 0.0001
+  RotationNetworkUpdateAngleThreshold: 0.01
+  VelocityNetworkUpdateSquareChangeThreshold: 0.0001
+  AngularVelocityNetworkUpdateSquareChangeThreshold: 0.01
   InterpolationDelayInSeconds: 0.2
-  MinAngleToInterpolateBetween: 1
-  MinDistanceToInterpolateBetween: 0.25
+  MinAngleToInterpolateBetween: 0.01
+  MinDistanceToInterpolateBetween: 0.0001
   MaxSecondsToInterpolateAfterLastUpdate: 0
   RemoveRigidbodyOnParented: 0
   MakeRigidbodyKinematicWhenNonAuthoritative: 0

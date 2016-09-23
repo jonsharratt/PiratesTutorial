@@ -6,11 +6,11 @@ namespace Assets.Gamelogic.Pirates.Behaviours
 {
     public class PlayerInputController : MonoBehaviour {
     
-        [Require] protected ShipControlsWriter ShipControls;
+        [Require] private PlayerControlsWriter PlayerControls;
     
         void Update ()
         {
-            ShipControls.Update
+            PlayerControls.Update
                 .TargetSpeed(Mathf.Clamp01(Input.GetAxis("Vertical")))
                 .TargetSteering(Input.GetAxis("Horizontal"))
                 .FinishAndSend();

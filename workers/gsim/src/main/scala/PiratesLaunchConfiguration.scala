@@ -1,4 +1,4 @@
-import improbable.apps._
+import improbable.worldApps._
 import improbable.corelibrary.transforms.TransformState
 import improbable.corelibrary.transforms.global.GlobalTransformState
 import improbable.dapi.LaunchConfig
@@ -13,7 +13,7 @@ import improbable.unity.fabric.engine.{DownloadableUnityConstraintToEngineDescri
 import improbable.unity.fabric.satisfiers.SatisfyPhysics
 
 object Settings {
-  val appsToStart = Seq(classOf[PlayerLifeCycleManager], classOf[Spawner])
+  val appsToStart = Seq(classOf[ClientEntityLifeCycleManager], classOf[WorldInitialiser])
   val qosStates = Set(TransformState.componentId, GlobalTransformState.componentId)
   val streamingQueryPolicy = DistanceAndTagsStreamingQueryPolicy(2000, Set(Terrain.name))
 }

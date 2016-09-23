@@ -28,6 +28,8 @@ namespace Assets.Gamelogic.Pirates.Cannons
             if (CannonballPrefab != null)
             {
                 var cannonball = Instantiate(CannonballPrefab, transform.position, transform.rotation) as GameObject;
+                var entityId = gameObject.EntityId();
+                cannonball.GetComponent<DestroyCannonball>().firerEntityId = entityId;
                 EnsureCannonBallWillNotCollideWithFirer(cannonball);
                 FireCannonball(cannonball, dir, firingPitch);
             }

@@ -1,4 +1,3 @@
-// Copyright (c) 2014 All Right Reserved, Improbable Worlds Ltd.
 package improbable.natures
 
 import improbable.corelib.natures.{BaseNature, NatureApplication, NatureDescription}

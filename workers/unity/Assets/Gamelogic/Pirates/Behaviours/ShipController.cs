@@ -6,7 +6,7 @@ namespace Assets.Gamelogic.Pirates.Behaviours
 {
     public class ShipController : MonoBehaviour
     {
-        [Require] protected ShipControlsReader ShipControls;
+        [Require] protected PlayerControlsReader PlayerControls;
 
         //Current speed (0-1 range)
         private float targetSpeed;
@@ -18,8 +18,8 @@ namespace Assets.Gamelogic.Pirates.Behaviours
 
         public void Update()
         {
-            var inputSpeed = ShipControls.TargetSpeed;
-            var inputSteering = ShipControls.TargetSteering;
+            var inputSpeed = PlayerControls.TargetSpeed;
+            var inputSteering = PlayerControls.TargetSteering;
 
             var delta = Time.deltaTime;
 

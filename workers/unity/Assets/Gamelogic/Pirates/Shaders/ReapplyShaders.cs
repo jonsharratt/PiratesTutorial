@@ -10,8 +10,6 @@ namespace Assets.Gamelogic.Pirates.Shaders
         // This script fixes a Unity bug that prevents shaders from correctly being visualised on Macs.
 
         private Renderer[] renderers;
-        private Material[] materials;
-        private string[] shaders;
 
         private void Awake()
         {
@@ -22,20 +20,14 @@ namespace Assets.Gamelogic.Pirates.Shaders
         {
             foreach (var renderer in renderers)
             {
-                materials = renderer.sharedMaterials;
-                shaders = new string[materials.Length];
+                var materials = renderer.sharedMaterials;
 
-                for (int i = 0; i < materials.Length; i++)
+                foreach (var material in materials)
                 {
-                    shaders[i] = materials[i].shader.name;
-                }
-
-                for (int i = 0; i < materials.Length; i++)
-                {
-                    materials[i].shader = Shader.Find(shaders[i]);
+                    var shader = material.shader.name;
+                    material.shader = Shader.Find(shader);
                 }
             }
         }
-
     }
 }

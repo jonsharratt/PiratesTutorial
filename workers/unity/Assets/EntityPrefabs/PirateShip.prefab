@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &101646
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -33,8 +33,6 @@ GameObject:
   - 114: {fileID: 11490060}
   - 114: {fileID: 11441326}
   - 114: {fileID: 11484910}
-  - 111: {fileID: 11183426}
-  - 114: {fileID: 11426928}
   - 114: {fileID: 11410120}
   - 114: {fileID: 11472412}
   m_Layer: 0
@@ -46,7 +44,7 @@ GameObject:
   m_IsActive: 1
 --- !u!1 &113582
 GameObject:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
@@ -152,10 +150,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 467550}
-  - {fileID: 442014}
   - {fileID: 427688}
   - {fileID: 454740}
+  - {fileID: 4000012053535858}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &427688
@@ -171,7 +168,7 @@ Transform:
   m_Children:
   - {fileID: 459558}
   m_Father: {fileID: 421518}
-  m_RootOrder: 2
+  m_RootOrder: 0
 --- !u!4 &442014
 Transform:
   m_ObjectHideFlags: 1
@@ -183,8 +180,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 421518}
-  m_RootOrder: 1
+  m_Father: {fileID: 4000012053535858}
+  m_RootOrder: 0
 --- !u!4 &446462
 Transform:
   m_ObjectHideFlags: 1
@@ -211,7 +208,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 421518}
-  m_RootOrder: 3
+  m_RootOrder: 1
 --- !u!4 &459558
 Transform:
   m_ObjectHideFlags: 1
@@ -237,8 +234,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 421518}
-  m_RootOrder: 0
+  m_Father: {fileID: 4000012053535858}
+  m_RootOrder: 1
 --- !u!4 &499136
 Transform:
   m_ObjectHideFlags: 1
@@ -427,21 +424,6 @@ Light:
   m_BounceIntensity: 1.77
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!111 &11183426
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107220}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a2ff7923bbf1c1a41975b30885537a47, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: a2ff7923bbf1c1a41975b30885537a47, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &11403966
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -508,18 +490,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &11426928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 107220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1b04f56ad1bfcf43ad356a7d124ade1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SinkingAnimation: {fileID: 11183426}
 --- !u!114 &11436858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -633,3 +603,62 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 107220}
   m_IsPrefabParent: 1
+--- !u!1 &1000014155148902
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012053535858}
+  - 114: {fileID: 114000010344355884}
+  - 111: {fileID: 111000010159758644}
+  m_Layer: 0
+  m_Name: Models
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000012053535858
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014155148902}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 442014}
+  - {fileID: 467550}
+  m_Father: {fileID: 421518}
+  m_RootOrder: 2
+--- !u!111 &111000010159758644
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014155148902}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: a2ff7923bbf1c1a41975b30885537a47, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: a2ff7923bbf1c1a41975b30885537a47, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
+--- !u!114 &114000010344355884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000014155148902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b04f56ad1bfcf43ad356a7d124ade1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SinkingAnimation: {fileID: 111000010159758644}
